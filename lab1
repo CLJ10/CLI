@@ -1,0 +1,54 @@
+def is_abundant(n):
+    divisors = [i for i in range(1, n) if n % i == 0]
+    return sum(divisors) > n
+
+n = int(input("Введіть ціле число n: "))
+
+if is_abundant(n):
+    print(f"Число {n} є надлишковим.")
+else:
+    print(f"Число {n} не є надлишковим.")
+
+import numpy as np
+
+N = int(input("Введіть розмір масиву N: "))
+array = []
+
+print("Введіть елементи масиву:")
+for _ in range(N):
+    array.append(float(input()))
+
+array = np.array(array)
+
+negative_elements = array[array < 0]
+if negative_elements.size > 0:
+    min_negative = negative_elements.min()
+    print(f"Мінімальний від'ємний елемент: {min_negative}")
+else:
+    print("В масиві немає від'ємних елементів.")
+
+positive_elements = array[array > 0]
+if positive_elements.size > 0:
+    mean_positive = positive_elements.mean()
+    print(f"Середнє арифметичне додатних елементів: {mean_positive}")
+else:
+    print("В масиві немає додатних елементів.")
+
+if positive_elements.size > 0:
+    print("Додатні елементи масиву:")
+    print(positive_elements)
+else:
+    print("Додатні елементи відсутні.")
+
+import math
+
+alpha = float(input("Введіть α (в градусах): "))
+beta = float(input("Введіть β (в градусах): "))
+
+alpha_rad = math.radians(alpha)
+beta_rad = math.radians(beta)
+
+z = (math.cos(alpha_rad) - math.cos(beta_rad))**2 - (math.sin(alpha_rad) - math.sin(beta_rad))**2
+print(f"Значення z: {z}")
+
+Лабораторна робота(1) успішно виконана
